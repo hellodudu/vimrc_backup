@@ -47,6 +47,9 @@
 set history=500
 set number
 
+" file encoding
+set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
+
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
