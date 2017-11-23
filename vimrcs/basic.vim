@@ -156,7 +156,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme desert
+    colorscheme solarized
 catch
 endtry
 
@@ -232,6 +232,7 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+map <leader>wc <C-W>c
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
