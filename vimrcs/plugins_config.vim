@@ -77,7 +77,8 @@ set grepprg=/bin/grep\ -nH
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerd Tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:NERDTreeWinPos = "right"
+let g:NERDTreeWinPos = "left"
+let NERDTreeShowBookmarks = 1
 let NERDTreeShowHidden=0
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let g:NERDTreeWinSize=35
@@ -89,8 +90,12 @@ map <leader>nf :NERDTreeFind<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-multiple-cursors
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:multi_cursor_next_key="\<C-s>"
+let g:multi_cursor_next_key="<C-n>"
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => tagbar
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <silent> <leader>tt :TagbarToggle<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => surround.vim config
@@ -141,6 +146,8 @@ nnoremap <silent> <leader>z :Goyo<cr>
 " => Vim-go
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:go_fmt_command = "goimports"
+map <leader>gr :GoRun<cr>
+map <leader>gd :GoDoc<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -171,3 +178,46 @@ nnoremap <silent> <leader>c :call SyntasticCheckCoffeescript()<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gitgutter_enabled=0
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vundle
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible                " be iMproved
+filetype off                    " required!
+set rtp+=~/.vim_runtime/sources_non_forked/vundle/
+call vundle#rc()
+call vundle#begin('~/.vim_runtime/sources_non_forked')
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+"my Bundle here:
+"
+" original repos on github
+
+" Bundle 'kien/ctrlp.vim'
+" Bundle 'sukima/xmledit'
+" Bundle 'sjl/gundo.vim'
+" Bundle 'jiangmiao/auto-pairs'
+" Bundle 'klen/python-mode'
+" Bundle 'Valloric/ListToggle'
+" Bundle 'SirVer/ultisnips'
+" Bundle 'Valloric/YouCompleteMe'
+" Bundle 'scrooloose/syntastic'
+" Bundle 't9md/vim-quickhl'
+" Bundle 'scrooloose/nerdcommenter'
+
+"..................................
+" vim-scripts repos
+
+" Bundle 'YankRing.vim'
+" Bundle 'vcscommand.vim'
+" Bundle 'ShowPairs'
+" Bundle 'SudoEdit.vim'
+" Bundle 'EasyGrep'
+" Bundle 'VOoM'
+" Bundle 'VimIM'
+
+"..................................
+" non github repos
+" Bundle 'git://git.wincent.com/command-t.git'
+"......................................
+filetype plugin indent on
