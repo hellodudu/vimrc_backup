@@ -192,7 +192,7 @@ Bundle 'gmarik/vundle'
 "my Bundle here:
 "
 " original repos on github
-
+Bundle 'rking/ag.vim'
 " Bundle 'kien/ctrlp.vim'
 " Bundle 'sukima/xmledit'
 " Bundle 'sjl/gundo.vim'
