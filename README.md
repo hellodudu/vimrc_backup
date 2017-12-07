@@ -1,6 +1,11 @@
-# Vimrc Backup
+# Vimrc
 
 make some modify from [amix's Ultimate Vimrc(Awesome mode)](https://github.com/amix/vimrc)
+
+# Install
+
+    git clone --depth=1 git://github.com/hellodudu/vimrc_backup.git ~/.vim_runtime
+	sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 ## Changed List
 
