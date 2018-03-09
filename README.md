@@ -50,4 +50,4 @@ make some modify from [amix's Ultimate Vimrc(Awesome mode)](https://github.com/a
         >set number
 
     * change colorscheme
-        >colorscheme desert
+
