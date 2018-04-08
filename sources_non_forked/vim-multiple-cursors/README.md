@@ -35,7 +35,7 @@ Vim command sequence: `2Gfp<C-n><C-n><C-n>cname`
 ### Add a cursor to each line of your visual selection
 ![Example2](assets/example2.gif?raw=true)
 
-Vim command sequence: `2Gvip<C-n>i"<Right><Right><Right>",<Esc>vipJ$r]Idays = [`
+Vim command sequence: `2Gvip<C-n>i"<Right><Right><Right>",<Esc>vipgJ$r]Idays = [`
 
 ### Do it backwards too! This is not just a replay of the above gif :)
 ![Example3](assets/example3.gif?raw=true)
@@ -51,15 +51,19 @@ To see what keystrokes are used for the above examples, see [the wiki page](http
 - Live update in Insert mode
 - One key to rule it all! See [Quick Start](#quick-start) on what the key does in different scenarios
 - Works in Normal, Insert, and Visual mode for any commands (including
-  multi-key commands, assuming you set `g:multicursor_insert_maps` and
-  `g:multicursor_normal_maps`; see Settings below for details)
+  multi-key commands, assuming you set `g:multicursor_normal_maps`;
+  see Settings below for details)
 
 ## Installation
 Install using [Pathogen], [Vundle], [Neobundle], or your favorite Vim package manager.
 Requires vim 7.4 or later for full functionality.
 
 ## Quick Start
-Out of the box, all you need to know is a single key `Ctrl-n`. Pressing the key in Normal mode highlights the current word under the cursor in Visual mode and places a virtual cursor at the end of it. Pressing it again finds the next occurrence and places another virtual cursor at the end of the visual selection. If you select multiple lines in Visual mode, pressing the key puts a virtual cursor at every line and leaves you in Normal mode.
+Out of the box, all you need to know is a single key `Ctrl-n`.
+
+Pressing the key in Normal mode highlights the current word under the cursor in Visual mode and places a virtual cursor at the end of it. Pressing it again finds the next ocurrence and places another virtual cursor at the end of the visual selection. You can also directly select all occurences by pressing `Ctrl-m Ctrl-n`.
+
+If you select multiple lines in Visual mode, pressing the key puts a virtual cursor at every line and leaves you in Normal mode.
 
 After you've marked all your locations with `Ctrl-n`, you can change the visual selection with normal Vim motion commands in Visual mode. You could go to Normal mode by pressing `v` and wield your motion commands there. Single key command to switch to Insert mode such as `c` or `s` from Visual mode or `i`, `a`, `I`, `A` in Normal mode should work without any issues.
 
@@ -74,34 +78,23 @@ You can also add multiple cursors using a regular expression. The command `Multi
 **NOTE:** If at any time you have lingering cursors on screen, you can press `Ctrl-n` in Normal mode and it will remove all prior cursors before starting a new one.
 
 ## Mapping
-Out of the box, only the single key `Ctrl-n` is mapped in regular Vim's Normal mode and Visual mode to provide the functionality mentioned above. `Ctrl-n`, `Ctrl-p`, `Ctrl-x`, and `<Esc>` are mapped in the special multicursor mode once you've added at least one virtual cursor to the buffer. If you don't like the plugin taking over your favorite key bindings, you can turn off the default with
+If you don't like the plugin taking over your favorite key bindings, you can turn off the default with
 ```viml
 let g:multi_cursor_use_default_mapping=0
-```
 
-You can then map the 'next', 'previous', 'skip', and 'exit' keys like the following:
-```viml
 " Default mapping
-let g:multi_cursor_next_key='<C-n>'
-let g:multi_cursor_prev_key='<C-p>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
+let g:multi_cursor_start_word_key      = '<C-n>'
+let g:multi_cursor_select_all_word_key = '<C-m><C-n>'
+let g:multi_cursor_start_key           = 'g<C-n>'
+let g:multi_cursor_select_all_key      = 'g<C-m><C-n>'
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
 ```
 
-By default, the 'next' key is also used to enter multicursor mode. If you want to use a different key to start multicursor mode than for selecting the next location, do like the following:
-```viml
-" Map start key separately from next key
-let g:multi_cursor_start_key='<F6>'
-```
-
-Note that when multicursor mode is started, it selects current word with boundaries, i.e. it behaves like `*`. If you want to avoid word boundaries in Normal mode (as `g*` does) but still have old behaviour up your sleeve, you can do the following:
-```viml
-let g:multi_cursor_start_key='<C-n>'
-let g:multi_cursor_start_word_key='g<C-n>'
-```
-In this configuration `<C-n>` will start multicursor mode without word boundaries (but only in Normal mode, as it does not make much sense to use it in Visual mode). Old behaviour with word boundaries is still available using `g<C-n>`.
-
-**IMPORTANT:** Please note that currently only single keystrokes and special keys can be mapped. This means that a mapping like `<Leader>n` will NOT work correctly. For a list of special keys that are supported, see `help :key-notation`
+By default `<C-n>` will start multicursor mode with word boundaries (behaves like `*`) and `g<C-n>` without word boundaries (behaves like `g*`).
+`g<C-n>` only makes sense in Normal mode, for other modes, use `<C-n>`.
 
 **NOTE:** Please make sure to always map something to `g:multi_cursor_quit_key`, otherwise you'll have a tough time quitting from multicursor mode.
 
@@ -122,15 +115,6 @@ If set to 0, then pressing `g:multi_cursor_quit_key` in _Visual_ mode will not q
 
 ### ```g:multi_cursor_exit_from_insert_mode``` (Default: 1)
 If set to 0, then pressing `g:multi_cursor_quit_key` in _Insert_ mode will not quit and delete all existing cursors. This is useful if you want to press Escape and go back to Normal mode, and still be able to operate on all the cursors.
-
-### ```g:multi_cursor_insert_maps``` (Default: `{}`)
-Any key in this map (values are ignored) will cause multi-cursor _Insert_ mode
-to pause for `timeoutlen` waiting for map completion just like normal vim.
-Otherwise keys mapped in insert mode are ignored when multiple cursors are
-active. For example, setting it to `{'\':1}` will make insert-mode mappings
-beginning with the default leader key work in multi-cursor mode. You have to
-manually set this because vim doesn't provide a way to see which keys _start_
-mappings.
 
 ### ```g:multi_cursor_normal_maps``` (Default: see below)
 Default value: `{'!':1, '@':1, '=':1, 'q':1, 'r':1, 't':1, 'T':1, 'y':1, '[':1, ']':1, '\':1, 'd':1, 'f':1, 'F':1, 'g':1, '"':1, 'z':1, 'c':1, 'm':1, '<':1, '>':1}`
