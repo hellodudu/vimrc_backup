@@ -49,6 +49,9 @@ set history=500
 " Set number
 set number
 
+" disable stratch window
+set completeopt-=preview
+
 " Enable filetype plugins
 filetype plugin on
 filetype indent on

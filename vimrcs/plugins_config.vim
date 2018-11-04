@@ -188,7 +188,7 @@ set rtp+=~/.vim_runtime/sources_non_forked/vundle/
 call vundle#rc()
 call vundle#begin('~/.vim_runtime/sources_non_forked')
 " let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+" Bundle 'gmarik/vundle'
 "my Bundle here:
 "
 " original repos on github
@@ -200,7 +200,7 @@ Bundle 'rking/ag.vim'
 " Bundle 'klen/python-mode'
 " Bundle 'Valloric/ListToggle'
 " Bundle 'SirVer/ultisnips'
-" Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
 " Bundle 'scrooloose/syntastic'
 " Bundle 't9md/vim-quickhl'
 " Bundle 'scrooloose/nerdcommenter'
