@@ -1,3 +1,12 @@
 [submodule "sources_non_forked/YouCompleteMe"]
 	path = sources_non_forked/YouCompleteMe
 	url = git://github.com/Valloric/YouCompleteMe
+[submodule "sources_non_forked/Auto-Pairs"]
+	path = sources_non_forked/Auto-Pairs
+	url = git://github.com/jiangmiao/auto-pairs
+[submodule "sources_non_forked/Tagbar"]
+	path = sources_non_forked/Tagbar
+	url = git://github.com/majutsushi/tagbar
+[submodule "sources_non_forked/vim-easymotion"]
+	path = sources_non_forked/vim-easymotion
+	url = git://github.com/easymotion/vim-easymotion
