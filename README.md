@@ -6,8 +6,8 @@ make some modify from [amix's Ultimate Vimrc(Awesome mode)](https://github.com/a
 
     git clone --depth=1 git://github.com/hellodudu/vimrc_backup.git ~/.vim_runtime
 	sh ~/.vim_runtime/install_awesome_vimrc.sh
-    git submodule foreach git pull origin master
     cd ~/.vim_runtime/
+    git submodule foreach git pull origin master
     ./sources_non_forked/YouCompleteMe/install.py --go-completer
 
 ## Changed List
