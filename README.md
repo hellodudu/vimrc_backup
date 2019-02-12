@@ -4,10 +4,10 @@ make some modify from [amix's Ultimate Vimrc(Awesome mode)](https://github.com/a
 
 # Install
 
-    git clone --depth=1 git://github.com/hellodudu/vimrc_backup.git ~/.vim_runtime
+    git clone git://github.com/hellodudu/vimrc_backup.git ~/.vim_runtime
 	sh ~/.vim_runtime/install_awesome_vimrc.sh
     cd ~/.vim_runtime/
-    git submodule foreach git pull origin master
+    git submodule update --init --recursive
     ./sources_non_forked/YouCompleteMe/install.py --go-completer
 
 ## Changed List
