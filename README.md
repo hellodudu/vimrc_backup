@@ -48,6 +48,9 @@ make some modify from [amix's Ultimate Vimrc(Awesome mode)](https://github.com/a
 
         >map \<leader\>gd :GoDoc\<cr\>
 
+    * change vim-go config.vim
+        >return get(g:, 'go_def_mode', 'godef')
+
 * **Vimrc Modifies**
     * add set number
         >set number
