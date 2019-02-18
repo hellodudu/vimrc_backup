@@ -146,6 +146,7 @@ nnoremap <silent> <leader>z :Goyo<cr>
 " => Vim-go
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:go_fmt_command = "goimports"
+let g:go_def_mode = "godef"
 map <leader>gr :GoRun<cr>
 map <leader>gd :GoDoc<cr>
 
