@@ -5,7 +5,6 @@ make some modify from [amix's Ultimate Vimrc(Awesome mode)](https://github.com/a
 # Install
 
     curl -o- -L https://github.com/hellodudu/vimrc_backup/get_install.sh | bash
-    ./sources_non_forked/YouCompleteMe/install.py --go-completer
 
 ## Changed List
 
