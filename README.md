@@ -4,7 +4,7 @@ make some modify from [amix's Ultimate Vimrc(Awesome mode)](https://github.com/a
 
 # Install
 
-    curl -o- -L https://github.com/hellodudu/vimrc_backup/get_install.sh | bash
+    curl -o- -L https://raw.githubusercontent.com/hellodudu/vimrc_backup/master/curl_install.sh | bash
 
 ## Changed List
 
