@@ -8,7 +8,7 @@ cd ~/.vim_runtime/
 sh ./install_awesome_vimrc.sh
 
 echo "start getting submodule plugins..."
-git submodule update --depth=1 --init --recursive
+git submodule update --init --recursive
 
 echo "start getting dependence tools..."
 
