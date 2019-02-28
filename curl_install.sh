@@ -22,4 +22,9 @@ if ! [ -x "$(command -v ctags)" ]; then
   brew install ctags
 fi
 
+if ! [ -x "$(command -v the_silver_searcher)" ]; then
+  echo "installing the_silver_searcher..."
+  brew install the_silver_searcher
+fi
+
 ./sources_non_forked/YouCompleteMe/install.py --go-completer
