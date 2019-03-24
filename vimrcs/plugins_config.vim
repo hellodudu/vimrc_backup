@@ -79,7 +79,7 @@ set grepprg=/bin/grep\ -nH
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:NERDTreeWinPos = "left"
 let NERDTreeShowBookmarks = 1
-let NERDTreeShowHidden=0
+let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let g:NERDTreeWinSize=35
 map <leader>nn :NERDTreeToggle<cr>
@@ -166,6 +166,9 @@ let g:go_highlight_function_arguments = 1
 let g:go_highlight_generate_tags = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_highlight_variable_assignments = 1
+" let g:go_metalinter_autosave = 1
+" let g:go_metalinter_enabled = ['golint']
+" let g:go_metalinter_autosave_enabled = ["golint"]
 map <leader>gr :GoRun<cr>
 map <leader>gd :GoDoc<cr>
 
