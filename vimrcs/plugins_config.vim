@@ -77,6 +77,7 @@ set grepprg=/bin/grep\ -nH
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerd Tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd VimEnter * NERDTree
 let g:NERDTreeWinPos = "left"
 let NERDTreeShowBookmarks = 1
 let NERDTreeShowHidden=1
@@ -95,6 +96,7 @@ let g:multi_cursor_next_key="<C-n>"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => tagbar
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd VimEnter * TagbarOpen
 nnoremap <silent> <leader>tt :TagbarToggle<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
