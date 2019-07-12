@@ -148,7 +148,9 @@ nnoremap <silent> <leader>z :Goyo<cr>
 " => Vim-go
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:go_fmt_command = "goimports"
-let g:go_def_mode = "gopls"
+let g:go_info_mode='gopls'
+let g:go_def_mode = 'godef'
+let g:go_decls_includes = "func,type"
 let g:go_auto_type_info = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
@@ -164,15 +166,16 @@ let g:go_highlight_array_whitespace_error = 1
 let g:go_highlight_chan_whitespace_error = 1
 let g:go_highlight_space_tab_error = 1
 let g:go_highlight_trailing_whitespace_error = 1
-let g:go_highlight_function_arguments = 1
+let g:go_highlight_function_parameters = 1
 let g:go_highlight_generate_tags = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_highlight_variable_assignments = 1
-" let g:go_metalinter_autosave = 1
-" let g:go_metalinter_enabled = ['golint']
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_enabled = ['vet', 'errcheck']
+let g:go_metalinter_deadline = "5s"
 " let g:go_metalinter_autosave_enabled = ["golint"]
 map <leader>gr :GoRun<cr>
-map <leader>gd :GoDoc<cr>
+map <leader>gd :GoDecls<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
