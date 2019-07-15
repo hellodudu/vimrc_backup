@@ -176,7 +176,7 @@ let g:go_metalinter_deadline = "5s"
 let g:go_auto_sameids = 1
 " let g:go_metalinter_autosave_enabled = ["golint"]
 map <leader>gr :GoRun<cr>
-map <leader>gd :GoDecls<cr>
+map <leader>gd :GoDeclsDir<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
