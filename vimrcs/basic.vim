@@ -39,6 +39,9 @@ set number
 " disable stratch window
 set completeopt-=preview
 
+" open mouse mode
+set mouse=a
+
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
