@@ -173,7 +173,7 @@ let g:go_highlight_variable_assignments = 1
 let g:go_metalinter_autosave = 0
 let g:go_metalinter_enabled = ['vet', 'errcheck']
 let g:go_metalinter_deadline = "5s"
-let g:go_auto_sameids = 1
+let g:go_auto_sameids = 0
 " let g:go_metalinter_autosave_enabled = ["golint"]
 map <leader>gr :GoRun<cr>
 map <leader>gd :GoDeclsDir<cr>
