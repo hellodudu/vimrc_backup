@@ -151,7 +151,7 @@ let g:go_fmt_command = "goimports"
 let g:go_info_mode='gopls'
 let g:go_def_mode = 'gopls'
 let g:go_decls_includes = "func,type"
-let g:go_auto_type_info = 1
+let g:go_auto_type_info = 0
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
@@ -270,6 +270,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'easymotion/vim-easymotion'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'flazz/vim-colorschemes'
+Bundle 'junegunn/gv.vim'
 " Bundle 'klen/python-mode'
 " Bundle 'Valloric/ListToggle'
 " Bundle 'SirVer/ultisnips'
