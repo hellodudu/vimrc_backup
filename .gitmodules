@@ -10,10 +10,6 @@
 	path = sources_non_forked/vim-easymotion
 	url = git://github.com/easymotion/vim-easymotion
 	shallow = true
-[submodule "sources_non_forked/YouCompleteMe"]
-	path = sources_non_forked/YouCompleteMe
-	url = git://github.com/Valloric/YouCompleteMe.git
-	shallow = true
 [submodule "sources_non_forked/vim-go"]
 	path = sources_non_forked/vim-go
 	url = git://github.com/fatih/vim-go.git
