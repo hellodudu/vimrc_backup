@@ -137,8 +137,8 @@ vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 " To go to the previous search results do:
 "   <leader>p
 "
-map <leader>co :botright cope<cr>
-map <leader>cc :botright cclose<cr>
+map tco :botright cope<cr>
+map tcc :botright cclose<cr>
 map <leader>n :cn<cr>
 map <leader>p :cp<cr>
 

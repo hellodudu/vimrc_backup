@@ -7,9 +7,6 @@ echo "start using vimrc config..."
 cd ~/.vim_runtime/
 sh ./install_awesome_vimrc.sh
 
-echo "start getting submodule plugins..."
-git submodule update --init --recursive
-
 echo "start getting dependence tools..."
 
 if ! [ -x "$(command -v cmake)" ]; then
@@ -27,4 +24,3 @@ if ! [ -x "$(command -v the_silver_searcher)" ]; then
   brew install the_silver_searcher
 fi
 
-./sources_non_forked/YouCompleteMe/install.py --go-completer
