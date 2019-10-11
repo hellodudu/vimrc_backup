@@ -273,3 +273,11 @@ nmap     <C-F>p <Plug>CtrlSFPwordPath
 nnoremap <C-F>o :CtrlSFOpen<CR>
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+
+"function! VisualCtrlSF()
+    ":TagbarClose
+    ":NERDTreeClose
+    "<Plug>CtrlSFVwordPath
+"endfunction 
+"vmap     <C-F>f :call VisualCtrlSF()
+
